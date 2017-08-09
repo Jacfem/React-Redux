@@ -6,11 +6,9 @@ import * as types from '../actions/actionTypes';
 //Default params in ES6 ------------------->
 export default function courseReducer(state = [], action) {
   switch(action.type) {
-    case types.CREATE_COURSE:
+    case types.LOAD_COURSES_SUCCESS:
     // Spread operator: represents our existing array & exploding it out, returning a new instance of our state array
-      return [...state,
-        Object.assign({}, action.course)
-      ];
+      return action.courses;
     // Can't do this bc state is immutable
       // state.push(action.course);
       // return state;
